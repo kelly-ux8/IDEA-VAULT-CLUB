@@ -10,7 +10,45 @@ border-radius:6px;
 cursor:pointer;
 margin:10px;
 }
+.active {
+    color: #ffd700;
+    font-weight: bold;
+}
 
+.page-container {
+    padding: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    gap: 10px;
+}
+
+input, textarea, select {
+    padding: 8px;
+}
+
+button {
+    background-color: #0b3d91;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.market-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+}
 .admin-logout-btn:hover{
 background:darkred;
 }
