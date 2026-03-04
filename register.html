@@ -12,10 +12,6 @@
         <img src="images/logo.png" alt="IDEA VAULT CLUB Logo" class="logo-nav">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="quiz.html">Quizzes</a></li>
-            <li><a href="leaderboard.html">Leaderboard</a></li>
-            <li><a href="ip_tool.html">IP Tool</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
@@ -25,15 +21,22 @@
         <h1>Member Registration</h1>
         <form id="registerForm">
             <label for="username">Username:</label>
-            <input type="text" id="username" required placeholder="Enter your username">
+            <input type="text" id="username" required placeholder="Enter Your Username">
 
             <label for="email">Email:</label>
-            <input type="email" id="email" required placeholder="Enter your email">
-
+            <input type="email" id="email" required placeholder="Enter Your Email">
+            <div class="password-box">
             <label for="password">Password:</label>
-            <input type="password" id="password" required placeholder="Enter your password">
-
+            <input type="password" id="password" required placeholder="Enter Your Password">
+             <span onclick="togglePassword('password', this)">Show</span>
+                 </div>
+            <div class="password-box">
+                <label for="password">Confirm Password:</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm Your Password" required>
+            <span onclick="togglePassword('confirmPassword', this)">Show</span>
+        </div>
             <button type="submit" class="btn-primary">Register</button>
+            <p id="registerMessage"></p>
         </form>
         <p>Already have an account? <a href="login.html">Login here</a></p>
     </section>
@@ -46,6 +49,7 @@
             const username = document.getElementById('username').value.trim();
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
             let users = JSON.parse(localStorage.getItem('ivc_members')) || [];
 
@@ -59,6 +63,7 @@
                 username: username,
                 email: email,
                 password: password,
+                confirm_password: password,
                 score: 0
             };
 
