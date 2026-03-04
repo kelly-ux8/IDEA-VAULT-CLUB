@@ -12,10 +12,6 @@
         <img src="images/logo.png" alt="IDEA VAULT CLUB Logo" class="logo-nav">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="quiz.html">Quizzes</a></li>
-            <li><a href="leaderboard.html">Leaderboard</a></li>
-            <li><a href="ip_tool.html">IP Tool</a></li>
             <li><a href="register.html">Register</a></li>
         </ul>
     </nav>
@@ -26,10 +22,11 @@
         <form id="loginForm">
             <label for="email">Email:</label>
             <input type="email" id="email" required placeholder="Enter your email">
-
+            <div class="password-box">
             <label for="password">Password:</label>
             <input type="password" id="password" required placeholder="Enter your password">
-
+            <span onclick="togglePassword('loginPassword', this)">Show</span>
+        </div>
             <button type="submit" class="btn-primary">Login</button>
         </form>
         <p>Don't have an account? <a href="register.html">Register here</a></p>
